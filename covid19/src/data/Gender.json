@@ -1,0 +1,7 @@
+{ "data": [
+    {"value": 8848 , "name": "FEMALE " },
+    {"value": 6392 , "name": "MALE " },
+    {"value": 135 , "name": "UNKNOWN"},
+    {"value": 3 , "name": "OTHER" },
+    {"value": 2 , "name": "TRANSGENDER" }
+]}    

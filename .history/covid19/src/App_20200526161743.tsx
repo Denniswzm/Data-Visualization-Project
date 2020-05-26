@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import EchartGenderPie from './components/EchartGenderPie';
-
+import EchartCityPie from './components/EchartCityPie';
 
 function App() {
   return (
@@ -21,9 +20,8 @@ function App() {
 			Learn React
 			</a>
 		</header> */}
-
 		<div>
-			<EchartGenderPie/>
+		<EchartCityPie/>
 		</div>
     </div>
   );

@@ -1,5 +1,6 @@
+// @ts-nocheck
 import React from "react";
-import ReactEcharts from "echarts-for-react";
+import ReactEcharts, {ReactEchartsPropsTypes} from "echarts-for-react";
 // import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Card } from 'react-bootstrap';
 import axios from "axios"; 
@@ -10,7 +11,7 @@ import '../App.css';
 
 class EchartCityPie extends React.Component {
 
-    options: ReactEchartsPropsTypes = {
+    options = {
         backgroundColor: '#2c343c',
     
         title: {

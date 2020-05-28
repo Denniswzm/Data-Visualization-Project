@@ -9,19 +9,16 @@ import echarts from "echarts";
 import PropTypes from "prop-types";
 import { bind, clear } from "size-sensor";
 import '../App.css';
-import city from "../data/ReportCity.json";
+import age from "../data/Age.json";
 
-class EchartCityBar extends React.Component {
+class EchartAgeBar extends React.Component {
 
     options = {
-        title: {
-            text: 'Confirmed Case in Cities',
-            subtext: 'data from kaggle'
-        },
+        color: ['#3398DB'],
         tooltip: {
             trigger: 'axis',
-            axisPointer: {
-                type: 'shadow'
+            axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
             }
         },
         grid: {
@@ -30,18 +27,26 @@ class EchartCityBar extends React.Component {
             bottom: '3%',
             containLabel: true
         },
-        xAxis: {
-            type: 'value',
-            boundaryGap: [0, 0.01]
-        },
-        yAxis: {
-            type: 'category',
-            data: city.data.map(x => x.name)
-        },
+        xAxis: [
+            {
+                type: 'category',
+                data: report.data.map(x => x.name),
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
         series: [
             {
+                name: 'Number of Confirmed',
                 type: 'bar',
-                data: city.data.map(x => x.value)
+                barWidth: '60%',
+                data: report.data.map(x => x.value)
             }
         ]
     };
@@ -49,10 +54,10 @@ class EchartCityBar extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "600px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }
 }
 
-export default EchartCityBar;
+export default EchartAgeBar;

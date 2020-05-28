@@ -16,8 +16,8 @@ class EchartGenderPie extends React.Component {
         backgroundColor: 'white',
     
         title: {
-            // text: ' Gender',
-            // left: 'center',
+            text: ' Gender',
+            left: 'center',
             // top: 20,
             textStyle: {
                 color: 'black'

@@ -8,19 +8,19 @@ import echarts from "echarts";
 import PropTypes from "prop-types";
 import { bind, clear } from "size-sensor";
 import '../App.css';
-import gender from "../data/Gender.json";
+import out from "../data/Outcome.json";
 
-class EchartGenderPie extends React.Component {
+class EchartOutPie extends React.Component {
 
     options = {
-        backgroundColor: 'white',
+        backgroundColor: 'grey',
     
         title: {
-            // text: ' Gender',
-            // left: 'center',
+            text: ' Gender',
+            left: 'center',
             // top: 20,
             textStyle: {
-                color: 'black'
+                color: '#ccc'
             }
         },
     
@@ -31,11 +31,11 @@ class EchartGenderPie extends React.Component {
     
         visualMap: {
             show: false,
-            min: 6000,
+            min: 100,
             max: 10000,
-            // inRange: {
-            //     colorLightness: [0, 1]
-            // }
+            inRange: {
+                colorLightness: [0, 1]
+            }
         },
         series: [
             {
@@ -43,10 +43,10 @@ class EchartGenderPie extends React.Component {
                 type: 'pie',
                 radius: '55%',
                 center: ['50%', '50%'],
-                data: gender.data,
+                data: out.data,
                 roseType: 'radius',
                 label: {
-                    color: 'black'
+                    color: 'rgba(255, 255, 255, 0.3)'
                 },
                 labelLine: {
                     lineStyle: {
@@ -59,7 +59,7 @@ class EchartGenderPie extends React.Component {
                 itemStyle: {
                     color: 'black',
                     shadowBlur: 200,
-                    shadowColor: 'white'
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 },
     
                 animationType: 'scale',
@@ -74,10 +74,10 @@ class EchartGenderPie extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "500px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }
 }
 
-export default EchartGenderPie;
+export default EchartOutPie;

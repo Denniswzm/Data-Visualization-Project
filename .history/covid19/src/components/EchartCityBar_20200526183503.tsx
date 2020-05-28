@@ -9,20 +9,24 @@ import echarts from "echarts";
 import PropTypes from "prop-types";
 import { bind, clear } from "size-sensor";
 import '../App.css';
-import city from "../data/ReportCity.json";
+import gender from "../data/Gender.json";
+import report from "../data/ReportCity.json";
 
 class EchartCityBar extends React.Component {
 
     options = {
         title: {
             text: 'Confirmed Case in Cities',
-            subtext: 'data from kaggle'
+            subtext: '数据来自网络'
         },
         tooltip: {
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow'
             }
+        },
+        legend: {
+            data: ['2011年', '2012年']
         },
         grid: {
             left: '3%',
@@ -36,12 +40,12 @@ class EchartCityBar extends React.Component {
         },
         yAxis: {
             type: 'category',
-            data: city.data.map(x => x.name)
+            data: ['巴西', '印尼', '美国', '印度', '中国', '世界人口(万)']
         },
         series: [
             {
                 type: 'bar',
-                data: city.data.map(x => x.value)
+                data: [18203, 23489, 29034, 104970, 131744, 630230]
             }
         ]
     };
@@ -49,7 +53,7 @@ class EchartCityBar extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "600px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }

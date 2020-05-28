@@ -49,7 +49,7 @@ class EchartCityBar extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "600px"}}/>
+                <ReactEcharts option={this.options} opts={{height: "1000px"}}/>
             </div>
         )
     }

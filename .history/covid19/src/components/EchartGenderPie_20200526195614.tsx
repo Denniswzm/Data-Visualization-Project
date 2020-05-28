@@ -13,14 +13,14 @@ import gender from "../data/Gender.json";
 class EchartGenderPie extends React.Component {
 
     options = {
-        backgroundColor: 'white',
+        backgroundColor: '#2c345',
     
         title: {
-            // text: ' Gender',
-            // left: 'center',
+            text: ' Gender',
+            left: 'center',
             // top: 20,
             textStyle: {
-                color: 'black'
+                color: '#ccc'
             }
         },
     
@@ -31,7 +31,7 @@ class EchartGenderPie extends React.Component {
     
         visualMap: {
             show: false,
-            min: 6000,
+            min: 5000,
             max: 10000,
             // inRange: {
             //     colorLightness: [0, 1]
@@ -46,20 +46,20 @@ class EchartGenderPie extends React.Component {
                 data: gender.data,
                 roseType: 'radius',
                 label: {
-                    color: 'black'
+                    color: 'rgba(255, 255, 255, 0.3)'
                 },
                 labelLine: {
                     lineStyle: {
-                        color: 'black'
+                        color: 'white'
                     },
                     smooth: 0.2,
                     length: 10,
                     length2: 20
                 },
                 itemStyle: {
-                    color: 'black',
+                    color: 'white',
                     shadowBlur: 200,
-                    shadowColor: 'white'
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 },
     
                 animationType: 'scale',
@@ -74,7 +74,7 @@ class EchartGenderPie extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "500px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }

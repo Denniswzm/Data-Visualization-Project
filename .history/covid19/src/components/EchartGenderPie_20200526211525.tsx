@@ -16,8 +16,8 @@ class EchartGenderPie extends React.Component {
         backgroundColor: 'white',
     
         title: {
-            // text: ' Gender',
-            // left: 'center',
+            text: ' Gender',
+            left: 'center',
             // top: 20,
             textStyle: {
                 color: 'black'
@@ -59,7 +59,7 @@ class EchartGenderPie extends React.Component {
                 itemStyle: {
                     color: 'black',
                     shadowBlur: 200,
-                    shadowColor: 'white'
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 },
     
                 animationType: 'scale',
@@ -74,7 +74,7 @@ class EchartGenderPie extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "500px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }

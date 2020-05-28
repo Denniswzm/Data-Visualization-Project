@@ -74,7 +74,7 @@ class EchartGenderPie extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "500px"}}/>
+                <ReactEcharts option={this.options} opts={{height: "500px", width:"200px"}}/>
             </div>
         )
     }

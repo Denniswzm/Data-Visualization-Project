@@ -25,9 +25,9 @@ class EchartCityBar extends React.Component {
             }
         },
         grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
+            // left: '3%',
+            // right: '4%',
+            // bottom: '3%',
             containLabel: true
         },
         xAxis: {
@@ -49,7 +49,7 @@ class EchartCityBar extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "600px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }

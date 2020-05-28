@@ -24,6 +24,9 @@ class EchartCityBar extends React.Component {
                 type: 'shadow'
             }
         },
+        legend: {
+            data: ['2011年', '2012年']
+        },
         grid: {
             left: '3%',
             right: '4%',
@@ -36,12 +39,12 @@ class EchartCityBar extends React.Component {
         },
         yAxis: {
             type: 'category',
-            data: city.data.map(x => x.name)
+            data: city.data.map(x=>x.name)
         },
         series: [
             {
                 type: 'bar',
-                data: city.data.map(x => x.value)
+                data: [18203, 23489, 29034, 104970, 131744, 630230]
             }
         ]
     };
@@ -49,7 +52,7 @@ class EchartCityBar extends React.Component {
     render() {
         return (
             <div>
-                <ReactEcharts option={this.options} opts={{height: "600px"}}/>
+                <ReactEcharts option={this.options}/>
             </div>
         )
     }
